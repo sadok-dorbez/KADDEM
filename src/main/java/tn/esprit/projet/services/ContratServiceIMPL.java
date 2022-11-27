@@ -105,4 +105,5 @@ public class ContratServiceIMPL implements  IContratService{
         }
         return CA;
     }
+
 }

@@ -15,6 +15,9 @@ public interface IDepartementService {
     Departement addep(Departement D);
     Departement updatedep(Departement D);
     void deletedep(long id);
+
+
+
     Departement getdepbyid(long id);
 
     List<Departement> retrieveDepartementByOptionEtudiant( Option op);

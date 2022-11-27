@@ -2,19 +2,19 @@ package tn.esprit.projet.services;
 
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tn.esprit.projet.entities.Departement;
 import tn.esprit.projet.entities.Option;
 import tn.esprit.projet.entities.Universite;
 import tn.esprit.projet.repository.DepartementRepository;
 import tn.esprit.projet.repository.UniversiteRepository;
-
 import java.util.List;
 import java.util.Set;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class DepartementServiceIMPL implements IDepartementService {
 
 
@@ -30,7 +30,9 @@ public class DepartementServiceIMPL implements IDepartementService {
 
     @Override
     public Departement addep(Departement D) {
+        log.debug("test method adddep");
         return departementRepository.save(D);
+
     }
 
     @Override
@@ -43,6 +45,7 @@ public class DepartementServiceIMPL implements IDepartementService {
        departementRepository.deleteById(id);
 
     }
+
 
     @Override
     public Departement getdepbyid(long id) {
