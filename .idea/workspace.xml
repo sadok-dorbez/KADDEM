@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc3a3c65-128c-4718-bd00-4758bd02366c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Genre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Contart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Contart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Equipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Etudinat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Etudinat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/DAO/entites/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/TpSpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/TpSpringBootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/ContratController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/ContratController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/DetailEquipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/DetailEquipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/EquipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/EquipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/EtudiantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/EtudiantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/UniversiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/controller/UniversiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/repositories/IContartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/repositories/IContartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/repositories/IEquipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/repositories/IEquipeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/ContratImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/ContratImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/DepartementImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/DepartementImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/DetailEquipeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/DetailEquipeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/EquipeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/EquipeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/EtudiantImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/EtudiantImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IContratService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IContratService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IEquipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IEquipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IEtudiantService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IEtudiantService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IUniversiteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/IUniversiteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/UniversiteImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/espritSpring/services/UniversiteImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tn/espritSpring/TpSpringBootApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2FcVPqZNzmK5j6k1fqfQIfQBTgb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ziedm/Desktop/tp_spring_boot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b8b50d4e4aaaa34b8fd5995b3a0348ab&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="TpSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tp_spring_boot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tn.espritSpring.TpSpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc3a3c65-128c-4718-bd00-4758bd02366c" name="Changes" comment="" />
+      <created>1664791338879</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664791338879</updated>
+      <workItem from="1664791340428" duration="7000" />
+      <workItem from="1665347694799" duration="2069000" />
+      <workItem from="1665392506749" duration="1557000" />
+      <workItem from="1665433839602" duration="18000" />
+      <workItem from="1665691888626" duration="1682000" />
+      <workItem from="1665833833018" duration="429000" />
+      <workItem from="1665834407827" duration="1154000" />
+      <workItem from="1665844020089" duration="1295000" />
+      <workItem from="1665995564076" duration="8505000" />
+      <workItem from="1666177333412" duration="163000" />
+      <workItem from="1666192465961" duration="2360000" />
+      <workItem from="1666274890299" duration="3462000" />
+      <workItem from="1666279488177" duration="2229000" />
+      <workItem from="1666531833961" duration="24000" />
+      <workItem from="1666600974419" duration="1701000" />
+      <workItem from="1666608221491" duration="1964000" />
+      <workItem from="1666649152727" duration="901000" />
+      <workItem from="1666963067975" duration="1800000" />
+      <workItem from="1667210599896" duration="632000" />
+      <workItem from="1667218710036" duration="10213000" />
+      <workItem from="1667293816957" duration="4855000" />
+      <workItem from="1667308881876" duration="3854000" />
+      <workItem from="1667318156454" duration="5370000" />
+      <workItem from="1667324545133" duration="5177000" />
+      <workItem from="1667341331138" duration="8214000" />
+      <workItem from="1667406821507" duration="858000" />
+      <workItem from="1667751069946" duration="121000" />
+      <workItem from="1667816575937" duration="295000" />
+      <workItem from="1667816952297" duration="3273000" />
+      <workItem from="1667823710793" duration="4017000" />
+      <workItem from="1667844166607" duration="358000" />
+      <workItem from="1667859902441" duration="996000" />
+      <workItem from="1668112845521" duration="1262000" />
+      <workItem from="1668347916677" duration="6673000" />
+      <workItem from="1668358690009" duration="1047000" />
+      <workItem from="1668360455358" duration="124000" />
+      <workItem from="1668415016357" duration="440000" />
+      <workItem from="1668415836583" duration="6746000" />
+      <workItem from="1668459206927" duration="24000" />
+      <workItem from="1668459275909" duration="893000" />
+      <workItem from="1668508627494" duration="217000" />
+      <workItem from="1668768579885" duration="999000" />
+      <workItem from="1668776682744" duration="5077000" />
+      <workItem from="1668803474436" duration="1261000" />
+      <workItem from="1668943630776" duration="5908000" />
+      <workItem from="1668970956649" duration="8550000" />
+      <workItem from="1669027103027" duration="2598000" />
+      <workItem from="1669496466099" duration="3029000" />
+      <workItem from="1669504421712" duration="3628000" />
+      <workItem from="1669561998776" duration="22145000" />
+      <workItem from="1669758367674" duration="6151000" />
+      <workItem from="1670018392255" duration="901000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tp_spring_boot$TpSpringBootApplication.ic" NAME="TpSpringBootApplication Coverage Results" MODIFIED="1665347941516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
