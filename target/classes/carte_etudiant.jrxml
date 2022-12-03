@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="carte_etudiant" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ed82eb96-ca19-4308-b22f-5b9b6a64f468">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="springdb"/>
+	<parameter name="id_etudiant" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[select nome,prenome,date_naissance,genre,photo
+from etudinat
+where id_etudiant= $P{id_etudiant}]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="etudinat"/>
+	</field>
+	<field name="prenome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="prenome"/>
+		<property name="com.jaspersoft.studio.field.label" value="prenome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="etudinat"/>
+	</field>
+	<field name="date_naissance" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date_naissance"/>
+		<property name="com.jaspersoft.studio.field.label" value="date_naissance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="etudinat"/>
+	</field>
+	<field name="genre" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="genre"/>
+		<property name="com.jaspersoft.studio.field.label" value="genre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="etudinat"/>
+	</field>
+	<field name="photo" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="photo"/>
+		<property name="com.jaspersoft.studio.field.label" value="photo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="etudinat"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="191" splitType="Stretch">
+			<rectangle>
+				<reportElement x="122" y="10" width="300" height="170" uuid="36ad6e6b-0d71-4719-ba88-a984cdabf243"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="218" y="20" width="130" height="30" forecolor="#3F1CED" backcolor="#F78431" uuid="cf555f7e-e19c-4c5a-ae61-16446ba11e7f"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carte Etudiant]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="177" y="72" width="59" height="30" uuid="6d125b1f-87a8-4fea-9953-4ed1702ed2d5"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="69" width="49" height="18" uuid="40f3fa1e-c566-463e-aab0-2e829713b326"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="101" width="69" height="18" uuid="4260e26f-e534-4a02-be72-599db3f28e2f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prenom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="129" width="129" height="18" uuid="858db504-a4fe-4fd3-87ff-7951be665e9b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Naissance :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="155" width="56" height="18" uuid="a2cd4c8b-11c4-4915-9ea7-d8d6400513a3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Genre :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="196" y="104" width="100" height="30" uuid="3475ea16-a1c8-402f-b8f5-4d1d79d7654e"/>
+				<textFieldExpression><![CDATA[$F{prenome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="134" width="100" height="30" uuid="aac1fdc8-75e7-4cc1-abba-f240fe769751"/>
+				<textFieldExpression><![CDATA[$F{date_naissance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="160" width="100" height="30" uuid="cef207c8-76b7-46e0-9333-c0b2ebfb9e87"/>
+				<textFieldExpression><![CDATA[$F{genre}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="123" y="16" width="71" height="76" uuid="a6a2a585-0078-4861-b4fd-9e2f5702947e"/>
+				<imageExpression><![CDATA["esprit.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="368" y="20" width="50" height="50" uuid="42f8754e-ce76-4180-9259-a43699a92bf2"/>
+				<imageExpression><![CDATA[$F{photo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="109" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+</jasperReport>
