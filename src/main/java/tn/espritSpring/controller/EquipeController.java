@@ -1,6 +1,7 @@
 package tn.espritSpring.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.web.bind.annotation.*;
 import tn.espritSpring.DAO.entites.Equipe;
 import tn.espritSpring.DAO.entites.Niveau;
@@ -11,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import tn.espritSpring.utils.MethodUtils;
 
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -83,6 +87,14 @@ public class EquipeController {
         String info=equipe.getIdEquipe()+" "+equipe.getNomEquipe()+" "+equipe.getNiveau();
         MethodUtils.generateImageQRCode(info, 250, 250, imagePath+"QRCode"+equipe.getIdEquipe()+".png");
         return new ResponseEntity<>(equipe, HttpStatus.OK);
+    }
+
+    @GetMapping("/download/equipes.xlsx")
+    public void downloadCsv(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; filename=equipes.xlsx");
+        ByteArrayInputStream stream = MethodUtils.contactListToExcelFile(iEquipeService.getAllEquipe());
+        IOUtils.copy(stream, response.getOutputStream());
     }
 
 }
