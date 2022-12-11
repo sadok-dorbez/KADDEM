@@ -15,6 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import tn.espritSpring.DAO.entites.*;
 import tn.espritSpring.repositories.IContartRepository;
@@ -41,6 +43,8 @@ public class EtudiantImp implements IEtudiantService{
     private final IEquipeRepository equipeRepository ;
     private final IContartRepository contartRepository ;
 
+    @Autowired
+    private JavaMailSender javaMailSender ;
     @Autowired
     private final Environment environment ;
 
@@ -95,8 +99,6 @@ public class EtudiantImp implements IEtudiantService{
                             .getInputStream());
 
 
-
-
             // Add parameters
             Map<String, Object> parameters = new HashMap<>();
 
@@ -107,7 +109,7 @@ public class EtudiantImp implements IEtudiantService{
                     conn);
 
             // Export the report to a PDF file
-            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\carte.pdf");
+            JasperExportManager.exportReportToPdfFile(jasperPrint, reportPath + "\\carte_"+idEtudiant+".pdf");
 
             return "Report successfully generated @path= " + reportPath;
         } catch (Exception e) {
@@ -116,7 +118,6 @@ public class EtudiantImp implements IEtudiantService{
         }
 
         }
-
 
 
     public void getlistetudiantExcel() {
@@ -159,6 +160,8 @@ public class EtudiantImp implements IEtudiantService{
         }
     }
 
+
+
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
         Cell cell = row.createCell(columnCount);
         if (value instanceof Integer) {
@@ -175,6 +178,37 @@ public class EtudiantImp implements IEtudiantService{
 
         cell.setCellStyle(style);
     }
+
+
+    private void sendMail(String to, String from, String subject, String message, JavaMailSender javaMailSender) {
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setTo(to);
+        msg.setSubject(subject);
+
+        msg.setFrom(from);
+        msg.setText(message);
+        javaMailSender.send(msg);
+    }
+
+
+    @Override
+    public void notifierEtudiant(Integer idEtudiant) {
+
+        Etudinat etudinat = etudinatRepository.findById(idEtudiant).orElse(null);
+
+        if (etudinat!= null && etudinat.getEmail()!=null && !etudinat.getEmail().equals("")){
+
+            String message = "Votre Carte est déja disponible . Merci de passer à l'administration pour la récuppérer !!" ;
+
+            String to = etudinat.getEmail();
+            String from = "zied.test.esprit@gmail.com";
+            String subject = "Carte Etudiant" ;
+
+            sendMail(to ,from ,subject ,message ,javaMailSender);
+        }
+
+    }
+
 
 
     @Override

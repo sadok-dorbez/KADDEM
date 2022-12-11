@@ -1,25 +1,31 @@
 package tn.espritSpring.services;
 
+
+import org.springframework.http.ResponseEntity;
 import tn.espritSpring.DAO.entites.Departement;
+import tn.espritSpring.DAO.entites.Option;
 
 import java.util.List;
 
 public interface IDepartementService {
 
 
-    void assignEtudiantToDepartement (Integer idDepart , Integer idEtudiant);
+    List<Departement> getAlldep();
+    Departement addep(Departement D);
+    Departement updatedep(Departement D);
+    void deletedep(long id);
+    Departement getdepbyid(long id);
 
-    void assignDepartementToUniversite(Integer idUniv, Integer idDepart);
+    List<Departement> retrieveDepartementByOptionEtudiant(Option op);
 
-    List<Departement> getAllDepartement() ;
-    Departement addDepartement(Departement d);
-    Departement updateDepartement (Departement d );
+     List<Departement>findDepartementsBynomUniversite(String nomUni);
 
-    Departement retrieveDepartement (Integer idDepart);
-
-     void deleteDepartement(Integer idDepart);
-    Departement getDepartementById(Integer idDepart) ;
-
+  //  int getDepartementsize();
+    long nbTotalEtudiant(Long idEtudiant);
+         Departement createUniver(Long idUniv,Departement d);
+    ResponseEntity<List<Departement>> deleteAllDepartmentOfUniversite(Long idUniv);
+    ResponseEntity<List<Departement>> getAllDepartmentOfUniversite(Long idUni);
+    List<String> getNomsdepartbyidUniv(String  nomUni);
 
 
 

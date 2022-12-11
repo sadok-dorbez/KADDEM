@@ -72,7 +72,6 @@ public class EtudiantController {
         return iEudiantService.retriveEtudiantByDepartementName(name);
     }
 
-
     @GetMapping("/carteetudiant/{idEtudiant}")
 
     public String generecarteetudpdf (@PathVariable("idEtudiant") Integer idEtudiant){
@@ -85,4 +84,8 @@ public class EtudiantController {
     }
 
 
+    @GetMapping("/notifieretudiant/{idEtudiant}")
+    public void notifierEtudiant  (@PathVariable("idEtudiant") Integer idEtudiant){
+         iEudiantService.notifierEtudiant(idEtudiant); ;
+    }
 }

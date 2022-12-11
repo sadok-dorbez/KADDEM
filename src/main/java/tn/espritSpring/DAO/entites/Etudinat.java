@@ -49,6 +49,8 @@ public class Etudinat implements Serializable {
 	
 	@Column(name="option")
 	private Option option;
+
+	private String email ;
 	
 	@OneToOne
 	private Contart contrat;

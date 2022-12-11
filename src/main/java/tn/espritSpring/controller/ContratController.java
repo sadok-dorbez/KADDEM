@@ -12,27 +12,32 @@ import java.util.List;
 @RequestMapping("/Contrat")
 @RequiredArgsConstructor
 public class ContratController {
-
    public final IContratService iContratService ;
 
+    //////////////////////Get Methods//////////////////////
     @GetMapping("/getAllContrat")
-    public List<Contart> getAllContrat() {return iContratService.getAllContrat();}
+    public List<Contart> getAllContrat() {
+        return iContratService.getAllContrat();
+    }
+    @GetMapping("/getbyidContrat/{idContart}")
+    public Contart getContratById(@PathVariable("idContart") int idContart) {
+        return iContratService.getContratById(idContart);
+    }
 
+    //////////////////////Post Methods//////////////////////
     @PostMapping("addContrat")
     public Contart addContrat(@RequestBody Contart c) {return iContratService.addContrat(c);}
 
+    //////////////////////Update Methods//////////////////////
     @PutMapping("/updateContrat")
     public Contart updateContrat(@RequestBody Contart c) {
         return iContratService.updateContrat(c);
     }
 
+    //////////////////////Delete Methods//////////////////////
     @DeleteMapping("/deleteContrat/{idContart}")
     public void deleteContrat(@PathVariable("idContart") int idContart) {iContratService.deleteContrat(idContart);}
 
-    @GetMapping("/getbyidContrat/{idContart}")
-    public Contart getContratById(@PathVariable("idContart") int idContart) {
-        return iContratService.getContratById(idContart);
-    }
 
     @GetMapping("/getnbcon/{dDeb}/{dFin}")
     @ResponseBody
@@ -40,12 +45,8 @@ public class ContratController {
         return iContratService.nbContratsValides( dDeb, dFin);
     }
 
-
     @GetMapping("/affaire/{startDate}/{endDate}")
     public  void calculChiffreAffaire(@PathVariable("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,@PathVariable("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
         iContratService.getChiffreAffaireEntreDeuxDate(startDate,endDate);
     }
-
-
-
 }

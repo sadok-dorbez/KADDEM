@@ -17,11 +17,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-
-
  public class ContratImpl implements IContratService{
-
-
     @Autowired
     private final  IContartRepository contartRepository ;
 
@@ -54,16 +50,13 @@ import java.util.List;
 
     @Override
     public String getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) {
-
         List<Contart> lc =contartRepository.findContratsByArchiveIsFalseAndDateDebutContratBetween(startDate,endDate);
-
         float chiffre=0;
         float chiffreIA=0;
         float chiffreRESAUX=0;
         float chiffreCLOUD=0;
         float chiffreSECURITE=0;
         for (Contart c : lc){
-
             if(c.getSpecialite().toString().equals("IA")){
                 chiffreIA = chiffreIA + c.getMontnatContrat();
                 System.out.println("******** Ia ="+chiffreIA);
@@ -80,9 +73,7 @@ import java.util.List;
                 chiffreRESAUX = chiffreRESAUX + c.getMontnatContrat();
                 System.out.println("******** Réseau ="+chiffreRESAUX);
             }
-
             chiffre += c.getMontnatContrat();
-
         }
 
         String ch =
@@ -93,16 +84,6 @@ import java.util.List;
         System.out.println(ch);
         return ch;
     }
-
-
-
-
-
-    @Scheduled(cron = "*/5 * * * * *")
-    void bonjour(){
-        log.info("hello");
-    }
-
 
     @Scheduled(cron ="0/15 * * * * *")
     public String retrieveStatusContrat(){
@@ -115,8 +96,4 @@ import java.util.List;
         System.out.println("scheduled job runned !");
         return res;
     }
-
-
-
-
 }

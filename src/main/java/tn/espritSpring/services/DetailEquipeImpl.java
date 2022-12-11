@@ -17,7 +17,7 @@ import java.util.List;
 public class DetailEquipeImpl implements IDetailEquipeService{
 
     @Autowired
-    private final   IDetailEquipeRepository detailEquipeRepository ;
+    private final IDetailEquipeRepository detailEquipeRepository ;
 
     private final IEquipeRepository equipeRepository ;
 
@@ -25,7 +25,6 @@ public class DetailEquipeImpl implements IDetailEquipeService{
 
     @Override
     public void assignDetailEquipeToEquipe(Integer idDetailEquipe , Integer idEquipe) {
-
         Equipe equipe=equipeRepository.findById(idEquipe).orElse(null);
         DetailEquipe detailEquipe=getDetailEquipeById(idDetailEquipe);
         equipe.setDetailEquipe(detailEquipe);

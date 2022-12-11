@@ -1,40 +1,38 @@
 package tn.espritSpring.DAO.entites;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import tn.espritSpring.DAO.entites.Departement;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 @Entity
+@Table( name = "Universite")
 @Getter
 @Setter
-@RequiredArgsConstructor
-public class Universite implements Serializable {
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Universite   implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="idUniv")
-	private Integer idUniv;
-	
-	
-	@Column(name="nomUniv")
-	private String nomUniv;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	private Set<Departement> Departements;
+	@Column(name="idUni")
+	private Long idUni; // Clé primaire
+	private String nomUni;
+	private  String  adresse;
+	private String description;
+	@JsonIgnore
+	@OneToMany/*(cascade = CascadeType.ALL,mappedBy = "universites")*/
+	private Set<Departement> departement;
 
-	
-	
+
+
+	public void removeDepartments() {
+		this.departement.clear();
+	}
+
+
 }
