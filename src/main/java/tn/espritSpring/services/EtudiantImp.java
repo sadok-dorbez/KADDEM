@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -251,6 +250,11 @@ public class EtudiantImp implements IEtudiantService{
     @Override
     public Etudinat getEtudiantById(Integer idEtudiant) {
         return etudinatRepository.findById(idEtudiant).orElse( null);
+    }
+
+    @Override
+    public Etudinat update(Etudinat etudinat) {
+        return etudinatRepository.save(etudinat);
     }
 
     @Override

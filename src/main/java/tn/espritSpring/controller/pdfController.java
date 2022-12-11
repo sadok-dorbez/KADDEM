@@ -14,20 +14,26 @@ import tn.espritSpring.DAO.entites.Departement;
 import tn.espritSpring.repositories.DepartementRepository;
 import tn.espritSpring.services.ServicePdf;
 
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
+
 
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 @AllArgsConstructor
 @Controller
 public class pdfController {
+
    DepartementRepository departementRepository;
+
    ServicePdf exportPDF;
 
+
    @GetMapping("/pdfDownload")
+
    public void downloadPdfFile(HttpServletResponse response) throws IOException {
        List<Departement> departements =(List<Departement>)departementRepository.findAll();
        ByteArrayInputStream byteArrayInputStream = exportPDF.exportPDF(departements);

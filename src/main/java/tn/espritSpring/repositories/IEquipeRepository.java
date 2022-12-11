@@ -21,4 +21,13 @@ public interface IEquipeRepository extends CrudRepository<Equipe , Integer> {
     @Query("DELETE FROM Equipe e WHERE e.niveau=:niveau")
     void deleteEquipeByNiveau( Niveau niveau);
 
+
+    List<Equipe> findEquipeByDetailEquipeThematiqueLike(String th);
+
+    List<Equipe> findEquipeByEtudinatsIdEtudiant(Integer id);
+
+    List<Equipe> findByEtudinatsIdEtudiantAndDetailEquipeThematiqueNotNull(Integer idEtudiant);
+
+    List<Equipe> findByEtudinatsIdEtudiantAndEtudinatsDepartementIdDepart(Integer idEtudiant, Integer idDepart);
+
 }

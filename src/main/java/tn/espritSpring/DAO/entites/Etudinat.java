@@ -55,6 +55,7 @@ public class Etudinat implements Serializable {
 	@OneToOne
 	private Contart contrat;
 
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Departement  departement;
 

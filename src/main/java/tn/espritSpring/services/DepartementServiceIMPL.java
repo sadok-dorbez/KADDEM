@@ -18,10 +18,13 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class DepartementServiceIMPL implements IDepartementService {
+
+
+
     DepartementRepository departementRepository;
     UniversiteRepository universiteRepository;
-    IEtudinatRepository etudinatRepository;
 
+    IEtudinatRepository etudinatRepository;
     @Override
     public List<Departement> getAlldep() {
         return departementRepository.findAll();
@@ -40,7 +43,9 @@ public class DepartementServiceIMPL implements IDepartementService {
     @Override
     public void deletedep(long id) {
        departementRepository.deleteById(id);
+
     }
+
 
     @Override
     public Departement getdepbyid(long id) {
@@ -57,6 +62,7 @@ public class DepartementServiceIMPL implements IDepartementService {
         return departementRepository.findDepartementsBynomUniversite(nomUni);
     }
 
+
 //    @Scheduled(cron = "*/10 * * * * *" )
     /*public int getDepartementsize() {
        List<Departement> List=(java.util.List<Departement>)departementRepository.findAll();
@@ -68,14 +74,18 @@ public class DepartementServiceIMPL implements IDepartementService {
 //nombre totale des etudiant by department
     @Override
     public long nbTotalEtudiant(Long idDepart){
-        Long nbT;
-        Departement departement=departementRepository.findById(idDepart).orElse(null);
-        nbT=departement.getEtudiants().stream().count();
+            Long nbT;
+            Departement departement=departementRepository.findById(idDepart).orElse(null);
+            nbT=departement.getEtudiants().stream().count();
         return nbT;
     }
 
+
+
     @Override
     public Departement  createUniver(Long idUniv,Departement d) {
+
+
             Universite universite = universiteRepository.findById(idUniv).orElse(null);
                 universite.getDepartement().add(d);
                 departementRepository.save(d);
@@ -95,6 +105,8 @@ public class DepartementServiceIMPL implements IDepartementService {
         Universite universite = universiteRepository.findById(idUni).orElse(null);
         List<Departement>departements=new ArrayList<Departement>();
         departements.addAll(universite.getDepartement());
+
+
         return new ResponseEntity<>(departements, HttpStatus.OK);
     }
 
@@ -102,5 +114,10 @@ public class DepartementServiceIMPL implements IDepartementService {
     @Override
     public List<String> getNomsdepartbyidUniv(String nomUni) {
         return null;
+
+
     }
+
 }
+
+

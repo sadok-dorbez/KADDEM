@@ -12,6 +12,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class UniversiteServiceIMPL implements  IUniversiteService {
+
+
     UniversiteRepository universiteRepository;
     DepartementRepository departementRepository;
 
@@ -33,6 +35,7 @@ public class UniversiteServiceIMPL implements  IUniversiteService {
     @Override
     public void deleteUni(long id) {
         universiteRepository.deleteById(id);
+
     }
 
     @Override
@@ -46,9 +49,12 @@ public class UniversiteServiceIMPL implements  IUniversiteService {
         Departement departement = departementRepository.findById(dep).orElse(null);
         universite.getDepartement().add(departement);
         universiteRepository.save(universite);
+
+
     }
 
-    //nombre  totale department by iduniv
+
+//nombre  totale department by iduniv
     @Override
     public long nbTotalDepartment(Long idUni) {
         Long nbT;
@@ -57,11 +63,17 @@ public class UniversiteServiceIMPL implements  IUniversiteService {
         return nbT;
     }
 
-   /*@Override
+
+
+
+
+   /* @Override
     public List nbTotalDepartmentbynom(String nomUni) {
        List nomdepart=new ArrayList<>();
        Universite universite=universiteRepository.findByNomUni(nomUni);
        nomdepart= universite.getDepartement().add();
         return nomdepart;
-    }*/
+    }
+
+*/
 }
